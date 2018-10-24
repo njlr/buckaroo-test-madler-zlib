@@ -14,13 +14,13 @@ install:
   - ps: refreshenv
   - ps: choco list --localonly
   - ps: buck --version
-  - wget -O buckaroo-cli.jar https://github.com/LoopPerfect/buckaroo/releases/download/v1.4.1/buckaroo-cli.jar
+  - wget -q -O buckaroo-cli.jar https://github.com/LoopPerfect/buckaroo/releases/download/v1.4.1/buckaroo-cli.jar
 
 # Disable automatic builds by MSBuild
 build: off
 
 build_script:
-  - buckaroo install
+  - java -jar buckaroo-cli.jar install
 
 test_script:
   - buck test :test1
