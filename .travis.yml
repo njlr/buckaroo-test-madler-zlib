@@ -15,7 +15,3 @@ before_install:
 script:
 - buckaroo install
 - buck run :test1
-
-branches:
-  except:
-  - gh-pages
