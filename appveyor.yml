@@ -8,13 +8,16 @@ environment:
     - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
 
 install:
+  - ps: Install-Module -Name PSCX -AllowClobber
+  - ps: Install-Module -Name VSSetup -AllowClobber
+  - ps: Import-VisualStudioVars 2017 amd64
   - ps: choco install wget -y --no-progress
   - ps: choco install zip -y --no-progress
   - ps: choco install buck -y --no-progress
   - ps: refreshenv
   - ps: choco list --localonly
   - ps: buck --version
-  - wget -q -O buckaroo-cli.jar https://github.com/LoopPerfect/buckaroo/releases/download/v1.4.1/buckaroo-cli.jar
+  - ps: wget -q -O buckaroo-cli.jar https://github.com/LoopPerfect/buckaroo/releases/download/v1.4.1/buckaroo-cli.jar
 
 # Disable automatic builds by MSBuild
 build: off
