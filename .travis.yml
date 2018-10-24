@@ -1,11 +1,16 @@
+language: cpp
+sudo: true
 dist: trusty
-sudo: required
-language: generic
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5
 
 before_install:
-- sudo apt-get -qq update
-- sudo apt-get install -qq g++-6
-- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+- cd /usr/bin/ && sudo rm g++ && sudo ln -s g++-5 g++ && cd -
 - sudo apt-get install -y equivs openjdk-8-jdk
 - wget -O buck.deb https://github.com/facebook/buck/releases/download/v2018.08.27.01/buck.2018.08.27.01_all.deb
 - sudo dpkg -i buck.deb
