@@ -8,5 +8,14 @@ cxx_test(
   licenses = [
     'LICENSE',
   ],
+  compiler_flags = [
+    '-pthread', 
+  ], 
+  linker_flags = [
+    '-lpthread', 
+  ], 
+  platform_linker_flags = [
+    ('linux.*', [ '-lpthread' ]), 
+  ], 
   deps = BUCKAROO_DEPS,
 )
