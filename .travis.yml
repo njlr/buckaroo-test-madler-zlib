@@ -7,10 +7,10 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-5
+      - g++-6
 
 before_install:
-- cd /usr/bin/ && sudo rm g++ && sudo ln -s g++-5 g++ && cd -
+- cd /usr/bin/ && sudo rm g++ && sudo ln -s g++-6 g++ && cd -
 - sudo apt-get install -y equivs openjdk-8-jdk
 - wget -O buck.deb https://github.com/facebook/buck/releases/download/v2018.08.27.01/buck.2018.08.27.01_all.deb
 - sudo dpkg -i buck.deb
