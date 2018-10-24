@@ -10,7 +10,7 @@ addons:
       - g++-6
 
 before_install:
-- cd /usr/bin/ && sudo rm g++ && sudo ln -s g++-6 g++ && cd -
+- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 - sudo apt-get install -y equivs openjdk-8-jdk
 - wget -O buck.deb https://github.com/facebook/buck/releases/download/v2018.08.27.01/buck.2018.08.27.01_all.deb
 - sudo dpkg -i buck.deb
@@ -19,6 +19,7 @@ before_install:
 - sudo dpkg -i buckaroo.deb
 - buckaroo version
 - c++ --version
+- g++ --version
 
 script:
 - buckaroo install
