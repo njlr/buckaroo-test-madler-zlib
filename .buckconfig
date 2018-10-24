@@ -4,7 +4,7 @@
 [cxx]
   should_remap_host_platform = true
   untracked_headers = error
-  untracked_headers_whitelist = /usr/include/.*, /usr/local/Cellar/llvm/4.0.1/.*
+  untracked_headers_whitelist = /usr/include/.*, /usr/local/Cellar/llvm/4.0.1/.*, /usr/lib/gcc/.*
 
 [repositories]
   google.gtest = buckaroo/official/google/gtest
