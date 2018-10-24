@@ -1,7 +1,7 @@
 [cxx]
   should_remap_host_platform = true
   untracked_headers = error
-  untracked_headers_whitelist = /usr/include/.*, /usr/local/Cellar/llvm/4.0.1/.*, /usr/lib/gcc/.*
+  untracked_headers_whitelist = /usr/include/.*, /usr/local/Cellar/llvm/4.0.1/.*, /usr/lib/gcc/.*, C:\Program Files (x86)\Microsoft Visual Studio\2017\.*
 
 [repositories]
   google.gtest = buckaroo/official/google/gtest
